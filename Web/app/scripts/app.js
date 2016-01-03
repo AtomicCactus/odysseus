@@ -18,5 +18,6 @@ angular.module('odysseusApp', [
     'ngSanitize',
     'ngTouch',
     'firebase',
-    'firebase.ref'
+    'firebase.ref',
+    'ui.bootstrap'
   ]);

@@ -16,6 +16,11 @@ angular.module('odysseusApp')
         controller: 'MainCtrl'
       })
 
+      .when('/apps', {
+        templateUrl: 'views/apps.html',
+        controller: 'AppsController'
+      })
+
       .when('/chat', {
         templateUrl: 'views/chat.html',
         controller: 'ChatCtrl'

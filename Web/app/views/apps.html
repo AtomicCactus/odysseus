@@ -1,0 +1,9 @@
+<div id="apps-container">
+    <form name="app-form" ng-repeat="app in apps" class="form-group">
+      <img class="app-icon" src="data:image/png;base64, {{app.icon}}" alt="http://placehold.it/72x72" />
+      <label>{{app.name | uppercase}}</label>
+      <button ng-class="{'btn-danger': !app.enabled, 'btn-success': app.enabled}" ng-click="onAppClicked(app)" type="button" class="btn btn-primary pull-right app-button" ng-model="app.enabled" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+        {{app.enabled ? "Allowed While Driving" : "Restricted While Driving"}}
+      </button>
+    </form>
+</div>
