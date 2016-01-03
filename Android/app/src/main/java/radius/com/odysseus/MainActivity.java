@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.provider.ContactsContract;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,6 +46,11 @@ public class MainActivity extends ActionBarActivity {
         super.onResume();
         getDeviceAdmin();
         startBluetoothService();
+
+        // Show a full-screen activity.
+        Intent fullScreenIntent = new Intent(getApplicationContext(), FullscreenActivity.class);
+        startActivity(fullScreenIntent);
+
         finish();
     }
 

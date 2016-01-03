@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="radius.com.odysseus" >
+    package="radius.com.odysseus">
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <!-- BLE requirement is set to "false" so the user can be notified if their device is not compatible. -->
-    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
-
-
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,15 +27,20 @@
         </activity>
 
         <!-- Bluetooth background service -->
-        <service android:name=".BluetoothService" android:enabled="true" />
+        <service
+            android:name=".BluetoothService"
+            android:enabled="true" />
 
         <!-- Get device admin -->
         <receiver
-            android:name="AdminReceiver"
+            android:name=".AdminReceiver"
             android:permission="android.permission.BIND_DEVICE_ADMIN">
-            <meta-data android:name="android.app.device_admin" android:resource="@xml/admin"/>
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/admin" />
+
             <intent-filter>
-                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
         </receiver>
 
@@ -47,5 +51,8 @@
                 <action android:name="android.intent.action.ACTION_SCREEN_OFF" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".FullscreenActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
+
 </manifest>
