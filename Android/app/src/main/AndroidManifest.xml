@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+
     <!-- BLE requirement is set to "false" so the user can be notified if their device is not compatible. -->
     <uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
 
@@ -36,6 +37,14 @@
             <meta-data android:name="android.app.device_admin" android:resource="@xml/admin"/>
             <intent-filter>
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Detect when the user interacts with the device -->
+        <receiver android:name=".UserPresentBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.ACTION_SCREEN_OFF" />
             </intent-filter>
         </receiver>
     </application>
