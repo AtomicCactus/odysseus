@@ -28,7 +28,7 @@ public class BluetoothService extends Service implements BluetoothAdapter.LeScan
     private static final String TAG = BluetoothService.class.getSimpleName();
     private static final int NOTIFICATION_ID = 123;
 
-    private static final int RSSI_MAX = -70;
+    private static final int RSSI_MAX = -69;
     private static final int LOCK_TIMEOUT = 2000;
 
     private BluetoothAdapter bluetoothAdapter;
